@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priherma · Construcción y Reformas en Murcia</title>
+  <meta name="description" content="Priherma — construcción de obra nueva, reformas integrales, baños, interiores y rehabilitación en Avileses, Murcia y alrededores. Trato directo y trabajo bien hecho." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="i18n.jsx"></script>
+  <script type="text/babel" src="shared.jsx"></script>
+  <script type="text/babel" src="header.jsx"></script>
+  <script type="text/babel" src="content.jsx"></script>
+  <script type="text/babel" src="projects.jsx"></script>
+  <script type="text/babel" src="sections.jsx"></script>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accent": "#d81f26",
+      "blueprint": "moderado",
+      "headerCta": true
+    }/*EDITMODE-END*/;
+
+    const CONTACT = {
+      phone: "669 42 94 96",
+      phone2: "616 29 51 35",
+      email: "priherma@gmail.com",
+      whatsapp: "+34 669 42 94 96",
+      address: "30592 Avileses, Murcia",
+    };
+
+    const BP_MAP = { ninguno: 0, sutil: 0.3, moderado: 0.55, fuerte: 0.85 };
+
+    function App() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      const [lang, setLangState] = useState(() => {
+        try { return localStorage.getItem("priherma-lang") || "es"; } catch (e) { return "es"; }
+      });
+      const setLang = (v) => {
+        setLangState(v);
+        try { localStorage.setItem("priherma-lang", v); } catch (e) {}
+        document.documentElement.lang = v;
+      };
+      React.useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+
+      const L = STRINGS[lang];
+
+      React.useEffect(() => {
+        const r = document.documentElement;
+        r.style.setProperty("--red", t.accent);
+        // derive a deeper shade for hover
+        r.style.setProperty("--blueprint-alpha", String(BP_MAP[t.blueprint] ?? 0.55));
+      }, [t.accent, t.blueprint]);
+
+      return (
+        <LangContext.Provider value={L}>
+          <Header phone={CONTACT.phone} lang={lang} setLang={setLang} />
+          <main>
+            <Hero phone={CONTACT.phone} />
+            <About />
+            <Services />
+            <Projects />
+            <Why />
+            <Areas />
+            <Contact {...CONTACT} />
+          </main>
+          <Footer {...CONTACT} />
+
+          <TweaksPanel>
+            <TweakSection label="Marca" />
+            <TweakColor label="Rojo de marca" value={t.accent}
+              options={["#d81f26", "#c8102e", "#e63312", "#b11116", "#1f1f1f"]}
+              onChange={(v) => setTweak("accent", v)} />
+            <TweakSection label="Fondo" />
+            <TweakRadio label="Plano / blueprint" value={t.blueprint}
+              options={["ninguno", "sutil", "moderado", "fuerte"]}
+              onChange={(v) => setTweak("blueprint", v)} />
+          </TweaksPanel>
+        </LangContext.Provider>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
