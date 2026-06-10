@@ -1,0 +1,74 @@
+backend:
+  name: github
+  repo: vanghmar/priherma
+  branch: main
+  auth_endpoint: https://api.netlify.com/auth
+  base_url: https://api.netlify.com
+
+media_folder: assets/gallery
+public_folder: /assets/gallery
+
+i18n:
+  structure: multiple_files
+  locales: [es, en]
+  default_locale: es
+
+collections:
+  - name: projects
+    label: Proyectos / Projects
+    folder: .
+    slug: "{{slug}}"
+    files:
+      - name: gallery
+        label: Galería ES
+        file: gallery.json
+        format: json
+        i18n: true
+        fields:
+          - name: projects
+            label: Proyectos
+            widget: list
+            fields:
+              - { name: id, label: ID, widget: string, pattern: ['^p[0-9]+$', 'Format: p1, p2, etc'] }
+              - { name: catKey, label: Categoría Clave, widget: select, options: [obra, reforma, banos, interiores, rehab, exteriores] }
+              - { name: cat, label: Categoría (Nombre), widget: string, i18n: true }
+              - { name: badge, label: Estado, widget: string, i18n: true }
+              - { name: name, label: Nombre del Proyecto, widget: string, i18n: true }
+              - { name: loc, label: Ubicación, widget: string }
+              - { name: year, label: Año, widget: string }
+              - { name: area, label: Área (m²), widget: string }
+              - { name: dur, label: Duración, widget: string, i18n: true }
+              - { name: cover, label: Imagen de Portada, widget: image }
+              - { name: desc, label: Descripción, widget: text, i18n: true }
+              - name: feats
+                label: Características
+                widget: list
+                field: { label: Característica, name: caracteristica, widget: string }
+                i18n: true
+              - { name: ba, label: Tiene Antes/Después, widget: boolean, default: false }
+
+      - name: gallery-en
+        label: Gallery EN
+        file: gallery-en.json
+        format: json
+        fields:
+          - name: projects
+            label: Projects
+            widget: list
+            fields:
+              - { name: id, label: ID, widget: string, pattern: ['^p[0-9]+$', 'Format: p1, p2, etc'] }
+              - { name: catKey, label: Category Key, widget: select, options: [obra, reforma, banos, interiores, rehab, exteriores] }
+              - { name: cat, label: Category (Name), widget: string }
+              - { name: badge, label: Status, widget: string }
+              - { name: name, label: Project Name, widget: string }
+              - { name: loc, label: Location, widget: string }
+              - { name: year, label: Year, widget: string }
+              - { name: area, label: Area (m²), widget: string }
+              - { name: dur, label: Duration, widget: string }
+              - { name: cover, label: Cover Image, widget: image }
+              - { name: desc, label: Description, widget: text }
+              - name: feats
+                label: Features
+                widget: list
+                field: { label: Feature, name: feature, widget: string }
+              - { name: ba, label: Has Before/After, widget: boolean, default: false }

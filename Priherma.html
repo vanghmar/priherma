@@ -48,6 +48,7 @@
 
     function App() {
       const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      const [loaded, setLoaded] = useState(false);
       const [lang, setLangState] = useState(() => {
         try { return localStorage.getItem("priherma-lang") || "es"; } catch (e) { return "es"; }
       });
@@ -68,8 +69,7 @@
         ]).then(([esData, enData]) => {
           STRINGS.es.projects.items = esData.projects || [];
           STRINGS.en.projects.items = enData.projects || [];
-          // Force re-render
-          setLangState(lang);
+          setLoaded(true); // Trigger re-render
         }).catch(err => console.error("Failed to load gallery data:", err));
       }, []);
 
