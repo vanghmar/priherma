@@ -129,7 +129,7 @@ const STRINGS = {
       servicesL: ["Obra nueva", "Reformas integrales", "Baños y cocinas", "Interiores", "Rehabilitación"],
       companyH: "Empresa",
       companyL: [{ href: "#nosotros", t: "Nosotros" }, { href: "#proyectos", t: "Proyectos" }, { href: "#zonas", t: "Zonas" }, { href: "#contacto", t: "Contacto" }],
-      builderCta: "¿Te gusta esta web? Contáctame",
+      builderCta: "Like this website? Get in touch",
       contactH: "Contacto",
       rights: "Construcción y Rehabilitación",
       base: "Avileses · ",
