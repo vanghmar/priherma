@@ -19,13 +19,13 @@
 <body>
   <div id="root"></div>
 
-  <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="i18n.jsx"></script>
-  <script type="text/babel" src="shared.jsx"></script>
-  <script type="text/babel" src="header.jsx"></script>
-  <script type="text/babel" src="content.jsx"></script>
-  <script type="text/babel" src="projects.jsx"></script>
-  <script type="text/babel" src="sections.jsx"></script>
+  <script type="text/babel" src="tweaks-panel.jsx?v=2"></script>
+  <script type="text/babel" src="i18n.jsx?v=2"></script>
+  <script type="text/babel" src="shared.jsx?v=2"></script>
+  <script type="text/babel" src="header.jsx?v=2"></script>
+  <script type="text/babel" src="content.jsx?v=2"></script>
+  <script type="text/babel" src="projects.jsx?v=2"></script>
+  <script type="text/babel" src="sections.jsx?v=2"></script>
 
   <script type="text/babel">
     const { useState } = React;
@@ -48,6 +48,7 @@
 
     function App() {
       const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      const [loaded, setLoaded] = useState(false);
       const [lang, setLangState] = useState(() => {
         try { return localStorage.getItem("priherma-lang") || "es"; } catch (e) { return "es"; }
       });
@@ -59,6 +60,18 @@
       React.useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
       const L = STRINGS[lang];
+
+      // Load project data from JSON files
+      React.useEffect(() => {
+        Promise.all([
+          fetch('/gallery.json').then(r => r.json()),
+          fetch('/gallery-en.json').then(r => r.json())
+        ]).then(([esData, enData]) => {
+          STRINGS.es.projects.items = esData.projects || [];
+          STRINGS.en.projects.items = enData.projects || [];
+          setLoaded(true); // Trigger re-render
+        }).catch(err => console.error("Failed to load gallery data:", err));
+      }, []);
 
       React.useEffect(() => {
         const r = document.documentElement;
