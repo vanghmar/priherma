@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "catKey": "obra",
+      "cat": "New build",
+      "badge": "Completed",
+      "name": "Coastal house",
+      "loc": "Avileses, Murcia",
+      "year": "2024",
+      "area": "180 m²",
+      "dur": "10 months",
+      "cover": "assets/gallery/p1-cover.jpeg",
+      "desc": "Complete construction of a two-storey home with rooftop terrace overlooking the sea. Handed over turnkey.",
+      "feats": [
+        "Foundations and structure",
+        "Rooftop terrace",
+        "Full services",
+        "Finishes and carpentry"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p2",
+      "catKey": "reforma",
+      "cat": "Full renovation",
+      "badge": "Completed",
+      "name": "House renovation",
+      "loc": "Murcia",
+      "year": "2024",
+      "area": "120 m²",
+      "dur": "3 months",
+      "cover": "assets/gallery/p2-cover.jpeg",
+      "desc": "Full renovation with complete interiors: natural stone feature wall with integrated LED lighting, wood flooring and open-plan layout.",
+      "feats": [
+        "Open-plan layout",
+        "Stone wall with LED",
+        "Laminate flooring",
+        "Paint and finishes"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p3",
+      "catKey": "rehab",
+      "cat": "Rehabilitation",
+      "badge": "Completed",
+      "name": "Traditional house — full rehab",
+      "loc": "Avileses, Murcia",
+      "year": "2023",
+      "area": "210 m²",
+      "dur": "4 months",
+      "cover": "assets/gallery/p3-cover.jpeg",
+      "desc": "Full rehabilitation of a traditional home: new exterior render, restored tile roof, arched porch and outdoor paving.",
+      "feats": [
+        "New render and paint",
+        "Tile roof",
+        "Arched porch",
+        "Outdoor paving"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p4",
+      "catKey": "exteriores",
+      "cat": "Exteriors",
+      "badge": "Completed",
+      "name": "Rural finca — access & porch",
+      "loc": "Murcia",
+      "year": "2023",
+      "area": "80 m²",
+      "dur": "4 weeks",
+      "cover": "assets/gallery/p4-cover.jpeg",
+      "desc": "Paved access driveway, stone porch and exterior works on a rural property. An outdoor space ready to enjoy all year round.",
+      "feats": [
+        "Paved access",
+        "Stone porch",
+        "Landscaping",
+        "Lighting"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p5",
+      "catKey": "exteriores",
+      "cat": "Exteriors",
+      "badge": "Completed",
+      "name": "House — façade & exterior",
+      "loc": "Avileses, Murcia",
+      "year": "2023",
+      "area": "160 m²",
+      "dur": "3 months",
+      "cover": "assets/gallery/p5-cover.jpeg",
+      "desc": "New façade, tile roof and exterior finishes. Clean, modern result while keeping the traditional local style.",
+      "feats": [
+        "New façade",
+        "Tile roof",
+        "Shutters and joinery",
+        "Outdoor paving"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p6",
+      "catKey": "obra",
+      "cat": "New build",
+      "badge": "Completed",
+      "name": "Coastal rooftop terrace",
+      "loc": "Avileses, Murcia",
+      "year": "2024",
+      "area": "90 m²",
+      "dur": "2 months",
+      "cover": "assets/gallery/p6-cover.jpeg",
+      "desc": "Rooftop terrace with porcelain tiling, artificial grass and sea views. Quality finishes throughout, from the floor to the perimeter wall.",
+      "feats": [
+        "Porcelain tiling",
+        "Artificial grass",
+        "Perimeter wall",
+        "Outdoor services"
+      ],
+      "ba": false
+    }
+  ]
+}

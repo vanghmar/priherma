@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "catKey": "obra",
+      "cat": "Obra nueva",
+      "badge": "Terminada",
+      "name": "Vivienda costera",
+      "loc": "Avileses, Murcia",
+      "year": "2024",
+      "area": "180 m²",
+      "dur": "10 meses",
+      "cover": "assets/gallery/p1-cover.jpeg",
+      "desc": "Construcción completa de una vivienda de dos plantas desde la cimentación, con terraza en cubierta con vistas al mar. Entregada llave en mano.",
+      "feats": [
+        "Cimentación y estructura",
+        "Cubierta con terraza exterior",
+        "Instalaciones completas",
+        "Acabados y carpintería"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p2",
+      "catKey": "reforma",
+      "cat": "Reforma integral",
+      "badge": "Terminada",
+      "name": "Reforma de vivienda",
+      "loc": "Murcia",
+      "year": "2024",
+      "area": "120 m²",
+      "dur": "3 meses",
+      "cover": "assets/gallery/p2-cover.jpeg",
+      "desc": "Reforma integral de vivienda con interiorismo completo: pared de piedra natural con iluminación integrada, suelo de madera y distribución abierta.",
+      "feats": [
+        "Distribución abierta",
+        "Pared de piedra con LED",
+        "Suelo laminado",
+        "Pintura y acabados"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p3",
+      "catKey": "rehab",
+      "cat": "Rehabilitación",
+      "badge": "Terminada",
+      "name": "Vivienda tradicional — rehabilitación",
+      "loc": "Avileses, Murcia",
+      "year": "2023",
+      "area": "210 m²",
+      "dur": "4 meses",
+      "cover": "assets/gallery/p3-cover.jpeg",
+      "desc": "Rehabilitación completa de vivienda tradicional: nuevo revoco exterior, cubierta de teja restaurada, porche con arcos y pavimento exterior.",
+      "feats": [
+        "Revoco y pintura exterior",
+        "Cubierta de teja",
+        "Porche con arcos",
+        "Pavimento y jardinería"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p4",
+      "catKey": "exteriores",
+      "cat": "Exteriores",
+      "badge": "Terminada",
+      "name": "Finca rural — acceso y porche",
+      "loc": "Murcia",
+      "year": "2023",
+      "area": "80 m²",
+      "dur": "4 semanas",
+      "cover": "assets/gallery/p4-cover.jpeg",
+      "desc": "Pavimentación de acceso, porche de piedra natural y trabajos exteriores en finca rural. Un exterior preparado para disfrutarlo todo el año.",
+      "feats": [
+        "Pavimento de acceso",
+        "Porche de piedra",
+        "Urbanización exterior",
+        "Iluminación"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p5",
+      "catKey": "exteriores",
+      "cat": "Exteriores",
+      "badge": "Terminada",
+      "name": "Vivienda — fachada y exterior",
+      "loc": "Avileses, Murcia",
+      "year": "2023",
+      "area": "160 m²",
+      "dur": "3 meses",
+      "cover": "assets/gallery/p5-cover.jpeg",
+      "desc": "Rehabilitación de fachada, cubierta de teja y acabados exteriores. Resultado final limpio y moderno manteniendo el estilo tradicional de la zona.",
+      "feats": [
+        "Fachada nueva",
+        "Cubierta de teja",
+        "Persianas y carpintería",
+        "Pavimento exterior"
+      ],
+      "ba": false
+    },
+    {
+      "id": "p6",
+      "catKey": "obra",
+      "cat": "Obra nueva",
+      "badge": "Terminada",
+      "name": "Terraza costera",
+      "loc": "Avileses, Murcia",
+      "year": "2024",
+      "area": "90 m²",
+      "dur": "2 meses",
+      "cover": "assets/gallery/p6-cover.jpeg",
+      "desc": "Terraza en cubierta con porcelánico, césped artificial y vistas al mar. Acabados de calidad en cada detalle, desde el solado hasta el cerramiento perimetral.",
+      "feats": [
+        "Solado de porcelánico",
+        "Césped artificial",
+        "Cerramiento perimetral",
+        "Instalaciones exteriores"
+      ],
+      "ba": false
+    }
+  ]
+}

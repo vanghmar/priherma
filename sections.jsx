@@ -50,7 +50,13 @@ function Areas() {
         </div>
 
         <div className="areas-map">
-          <Placeholder kind={L.mapKind} desc={L.mapDesc} icon="pin" />
+          <iframe
+            title="Zona de trabajo Priherma"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-1.4500%2C37.7500%2C-0.7500%2C38.1500&layer=mapnik&marker=37.9500%2C-1.0833"
+            style={{ width: "100%", height: "100%", border: 0, display: "block", minHeight: 320 }}
+            loading="lazy"
+            allowFullScreen
+          />
         </div>
       </div>
     </section>
@@ -170,6 +176,9 @@ function Footer({ phone, phone2, email, whatsapp, address }) {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Priherma · {L.rights}</span>
+          <a href="https://wa.me/447549119705" target="_blank" rel="noopener" className="footer-builder-cta">
+            <Icon name="whatsapp" /> Like this website? Get in touch
+          </a>
           <span>{L.base}<span className="red">Murcia</span></span>
         </div>
       </div>

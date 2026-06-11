@@ -5,12 +5,18 @@ function Hero({ phone }) {
   const tel = phone.replace(/\s/g, "");
   return (
     <section id="inicio" className="hero">
+      <div className="hero-bg">
+        <img src="assets/hero-building.jpg" alt="Promoción de viviendas construida por Priherma en Murcia" />
+        <div className="hero-scrim"></div>
+      </div>
       <div className="hero-redbar"></div>
-      <div className="bp-fade"></div>
-      <div className="wrap hero-grid">
+      <div className="wrap hero-inner">
         <div className="hero-copy">
-          <span className="eyebrow">{L.eyebrow}</span>
-          <h1>{L.h1a}<em>{L.h1em}</em>{L.h1b}</h1>
+          <span className="hero-eyebrow">{L.eyebrow}</span>
+          <h1>
+            <span className="hl-main">{L.h1a}</span>
+            <span className="hl-em">{L.h1em}</span>
+          </h1>
           <p className="hero-sub">{L.sub}</p>
           <div className="hero-cta">
             <a className="btn btn-red" href={"tel:" + tel}>
@@ -23,20 +29,13 @@ function Hero({ phone }) {
           <div className="hero-stats">
             {L.stats.map((s, i) => (
               <div className="hero-stat" key={i}>
-                <div className="n">{s.n}</div>
-                <div className="l">{s.sub}</div>
+                <div className="hs-icon"><Icon name={s.icon} /></div>
+                <div className="hs-text">
+                  <div className="t">{s.t}</div>
+                  <div className="l">{s.l}</div>
+                </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="hero-visual">
-          <div className="hero-photo">
-            <Placeholder kind={L.photo.kind} desc={L.photo.desc} icon="home" />
-            <div className="hero-tag">
-              <div className="k">{L.tagK}</div>
-              <div className="v">{L.tagV}</div>
-            </div>
           </div>
         </div>
       </div>
@@ -51,8 +50,10 @@ function About() {
       <div className="wrap about-grid">
         <div className="about-media">
           <div className="stack">
-            {L.photos.map((p, i) => (
-              <div className="frame" key={i}><Placeholder kind={p.kind} desc={p.desc} icon={["users", "ruler", "building"][i]} /></div>
+            {["assets/gallery/about-team.jpeg","assets/gallery/about-finished.jpeg","assets/gallery/about-process.jpeg"].map((src, i) => (
+              <div className="frame" key={i}>
+                <img src={src} alt={L.photos[i]?.kind} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+              </div>
             ))}
           </div>
           <div className="about-badge">

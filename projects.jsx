@@ -5,7 +5,9 @@ function ProjectCard({ p, photoLabel, onOpen }) {
     <div className="proj-card" onClick={() => onOpen(p)}>
       <span className="proj-badge">{p.badge}</span>
       <span className="proj-view"><Icon name="arrowUpRight" /></span>
-      <Placeholder kind={p.cat} desc={photoLabel} icon="camera" />
+      {p.cover
+        ? <img src={p.cover} alt={p.name} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+        : <Placeholder kind={p.cat} desc={photoLabel} icon="camera" />}
       <div className="proj-overlay">
         <span className="proj-cat">{p.cat}</span>
         <span className="proj-name">{p.name}</span>
@@ -32,16 +34,22 @@ function Lightbox({ p, lb, onClose }) {
             <div className="lb-ba">
               <div>
                 <span className="tag">{lb.before}</span>
-                <Placeholder kind={lb.before} desc={lb.beforeDesc} icon="camera" />
+                {p.imgBefore
+                  ? <img src={p.imgBefore} alt={lb.before} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+                  : <Placeholder kind={lb.before} desc={lb.beforeDesc} icon="camera" />}
               </div>
               <div>
                 <span className="tag after">{lb.after}</span>
-                <Placeholder kind={lb.after} desc={lb.afterDesc} icon="camera" />
+                {p.imgAfter
+                  ? <img src={p.imgAfter} alt={lb.after} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+                  : <Placeholder kind={lb.after} desc={lb.afterDesc} icon="camera" />}
               </div>
               <div className="divider"></div>
             </div>
           ) : (
-            <Placeholder kind={p.cat} desc={lb.beforeDesc} icon="camera" />
+            p.cover
+              ? <img src={p.cover} alt={p.name} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+              : <Placeholder kind={p.cat} desc={lb.beforeDesc} icon="camera" />
           )}
         </div>
         <div className="lb-info">
