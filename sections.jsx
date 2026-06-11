@@ -164,6 +164,7 @@ function Footer({ phone, phone2, email, whatsapp, address }) {
           <div className="fcol">
             <h4>{L.companyH}</h4>
             {L.companyL.map((c) => <a href={c.href} key={c.href}>{c.t}</a>)}
+            <a href="https://wa.me/447549119705" target="_blank" rel="noopener" style={{ marginTop: 8, opacity: 0.5, fontSize: 13 }}><Icon name="whatsapp" /> {L.builderCta}</a>
           </div>
           <div className="fcol">
             <h4>{L.contactH}</h4>
@@ -176,9 +177,6 @@ function Footer({ phone, phone2, email, whatsapp, address }) {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Priherma · {L.rights}</span>
-          <a href="https://wa.me/447549119705" target="_blank" rel="noopener" className="footer-builder-cta">
-            <Icon name="whatsapp" /> Like this website? Get in touch
-          </a>
           <span>{L.base}<span className="red">Murcia</span></span>
         </div>
       </div>
