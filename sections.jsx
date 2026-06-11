@@ -164,7 +164,6 @@ function Footer({ phone, phone2, email, whatsapp, address }) {
           <div className="fcol">
             <h4>{L.companyH}</h4>
             {L.companyL.map((c) => <a href={c.href} key={c.href}>{c.t}</a>)}
-            <a href="https://wa.me/447549119705" target="_blank" rel="noopener" style={{ marginTop: 8, opacity: 0.5, fontSize: 13 }}><Icon name="whatsapp" /> {L.builderCta}</a>
           </div>
           <div className="fcol">
             <h4>{L.contactH}</h4>
@@ -173,6 +172,10 @@ function Footer({ phone, phone2, email, whatsapp, address }) {
             <a href={"mailto:" + email}>{email}</a>
             <a href={"https://wa.me/" + wa} target="_blank" rel="noopener">WhatsApp</a>
             <span>{address}</span>
+            <a href="https://wa.me/447549119705" target="_blank" rel="noopener"
+              style={{ marginTop: 12, display: "inline-block", background: "#25D366", color: "#fff", padding: "7px 14px", borderRadius: 6, fontSize: 13, fontWeight: 600, textDecoration: "none" }}>
+              💬 {L.builderCta}
+            </a>
           </div>
         </div>
         <div className="footer-bottom">
